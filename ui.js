@@ -12,14 +12,14 @@ class UI{
     }
 
     paint(weather){
-        this.location.textContent = weather.location.name;
-        this.desc.textContent = weather.current.weather_descriptions[0];
-        this.icon.setAttribute('src', weather.current.weather_icons[0]);
-        this.humidity.textContent = `Humidity : ${weather.current.humidity}`;
-        this.feelsLike.textContent = `FeelsLike : ${weather.current.feelslike}`;
-        this.wind.textContent = `Wind Speed : ${weather.current.wind_speed}`;
-        this.visibility.textContent = `Visibility : ${weather.current.visibility}`;
-        this.temperature.textContent = `Temperature : ${weather.current.temperature}`
+        this.location.textContent = weather.name;
+        this.desc.textContent = weather.weather[0].description;
+        this.icon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`);
+        this.humidity.textContent = `Humidity : ${weather.main.humidity}`;
+        this.feelsLike.textContent = `FeelsLike : ${weather.main.feels_like}`;
+        this.wind.textContent = `Wind Speed : ${weather.wind.speed}`;
+        this.visibility.textContent = `Visibility : ${weather.visibility}`;
+        this.temperature.textContent = `Temperature : ${weather.main.temp}`
         
         console.log(this.location, this.desc, this.icon, this.humidity, this.feelsLike, this.wind);
         
